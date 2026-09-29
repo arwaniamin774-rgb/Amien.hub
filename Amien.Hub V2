@@ -1,1 +1,126 @@
 
+--// Amien.Hub
+--// UI ONLY - Black & Gold responsive design
+
+local Players = game:GetService("Players")
+local UserInputService = game:GetService("UserInputService")
+
+local Player = Players.LocalPlayer
+local PlayerGui = Player:WaitForChild("PlayerGui")
+
+local old = PlayerGui:FindFirstChild("Amien.Hub")
+if old then old:Destroy() end
+
+local GOLD = Color3.fromRGB(235, 180, 55)
+local GOLD2 = Color3.fromRGB(255, 210, 90)
+local DARK = Color3.fromRGB(5, 5, 5)
+local PANEL = Color3.fromRGB(13, 13, 13)
+local PANEL2 = Color3.fromRGB(20, 20, 20)
+local WHITE = Color3.fromRGB(242, 242, 242)
+local GREY = Color3.fromRGB(155, 155, 155)
+local GREEN = Color3.fromRGB(65, 220, 90)
+
+local Gui = Instance.new("ScreenGui")
+Gui.Name = "Amien.Hub"
+Gui.ResetOnSpawn = false
+Gui.IgnoreGuiInset = true
+Gui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+Gui.Parent = PlayerGui
+
+local Main = Instance.new("Frame")
+Main.Name = "Main"
+Main.Size = UDim2.fromScale(0.88, 0.72)
+Main.Position = UDim2.fromScale(0.5, 0.5)
+Main.AnchorPoint = Vector2.new(0.5, 0.5)
+Main.BackgroundColor3 = DARK
+Main.BorderSizePixel = 0
+Main.ClipsDescendants = true
+Main.Parent = Gui
+
+local MainCorner = Instance.new("UICorner")
+MainCorner.CornerRadius = UDim.new(0, 16)
+MainCorner.Parent = Main
+
+local MainStroke = Instance.new("UIStroke")
+MainStroke.Color = GOLD
+MainStroke.Thickness = 2
+MainStroke.Transparency = 0.1
+MainStroke.Parent = Main
+
+local Aspect = Instance.new("UIAspectRatioConstraint")
+Aspect.AspectRatio = 1.55
+Aspect.Parent = Main
+
+local Header = Instance.new("Frame")
+Header.Size = UDim2.new(1, 0, 0, 92)
+Header.BackgroundColor3 = Color3.fromRGB(3, 3, 3)
+Header.BorderSizePixel = 0
+Header.Parent = Main
+
+local HeaderGradient = Instance.new("UIGradient")
+HeaderGradient.Color = ColorSequence.new{
+    ColorSequenceKeypoint.new(0, Color3.fromRGB(8,8,8)),
+    ColorSequenceKeypoint.new(0.55, Color3.fromRGB(2,2,2)),
+    ColorSequenceKeypoint.new(1, Color3.fromRGB(12,9,3))
+}
+HeaderGradient.Parent = Header
+
+local Crown = Instance.new("TextLabel")
+Crown.Size = UDim2.fromOffset(62, 70)
+Crown.Position = UDim2.fromOffset(15, 9)
+Crown.BackgroundTransparency = 1
+Crown.Text = "♛"
+Crown.TextColor3 = GOLD2
+Crown.TextSize = 48
+Crown.Font = Enum.Font.GothamBlack
+Crown.Parent = Header
+
+local Title = Instance.new("TextLabel")
+Title.Size = UDim2.new(0, 320, 0, 45)
+Title.Position = UDim2.fromOffset(73, 8)
+Title.BackgroundTransparency = 1
+Title.Text = "AMIEN"
+Title.TextColor3 = GOLD2
+Title.TextSize = 34
+Title.Font = Enum.Font.GothamBlack
+Title.TextXAlignment = Enum.TextXAlignment.Left
+Title.Parent = Header
+
+local HubWhite = Instance.new("TextLabel")
+HubWhite.Size = UDim2.new(0, 180, 0, 38)
+HubWhite.Position = UDim2.fromOffset(220, 14)
+HubWhite.BackgroundTransparency = 1
+HubWhite.Text = "Hub"
+HubWhite.TextColor3 = WHITE
+HubWhite.TextSize = 31
+HubWhite.Font = Enum.Font.GothamBlack
+HubWhite.TextXAlignment = Enum.TextXAlignment.Left
+HubWhite.Parent = Header
+
+local Subtitle = Instance.new("TextLabel")
+Subtitle.Size = UDim2.new(0, 300, 0, 20)
+Subtitle.Position = UDim2.fromOffset(160, 57)
+Subtitle.BackgroundTransparency = 1
+Subtitle.Text = "P R E M I U M   S C R I P T   H U B"
+Subtitle.TextColor3 = GREY
+Subtitle.TextSize = 10
+Subtitle.Font = Enum.Font.GothamMedium
+Subtitle.Parent = Header
+
+local Minimize = Instance.new("TextButton")
+Minimize.Size = UDim2.fromOffset(42, 34)
+Minimize.Position = UDim2.new(1, -94, 0, 25)
+Minimize.BackgroundColor3 = PANEL2
+Minimize.Text = "—"
+Minimize.TextColor3 = GOLD2
+Minimize.TextSize = 22
+Minimize.Font = Enum.Font.GothamBold
+Minimize.BorderSizePixel = 0
+Minimize.Parent = Header
+
+local Close = Instance.new("TextButton")
+Close.Size = UDim2.fromOffset(42, 34)
+Close.Position = UDim2.new(1, -47, 0, 25)
+Close.BackgroundColor3 = PANEL2
+Close.Text = "×"
+Close.Text
